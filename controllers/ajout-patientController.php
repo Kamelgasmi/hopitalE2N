@@ -71,10 +71,14 @@ if(isset($_POST['addPatient'])){
     }
     if(empty($formErrors)){
         //on appelle la methode de notre addPatient pour creer un nouveau patient dans la base de données
-        if($patient->addPatient()){
-            $addPatientMessage = 'LE PATIENT A BIEN ETE ENREGISTE'; 
-        }else{
-            $addPatientMessage = 'UNE ERREUR EST SURVENUE PANDANT L \'ENREGISTREMENT.VEUILLEZ CONATCER LE SERVICE INFORMATIQUE.';    
+        if($patient->patientNotExist()){ //la méthode va être exécutée car le "if" est verifié au traitement 
+            if($patient->addPatient()){
+                $addPatientMessage = 'LE PATIENT A BIEN ETE ENREGISTE';
+            }else {
+                $addPatientMessage = 'UNE ERREUR EST SURVENUE PANDANT L\'ENREGISTREMENT.VEUILLEZ CONATCER LE SERVICE INFORMATIQUE.';
+            }
+        } else{
+            $addPatientMessage  = 'Ce patient éxiste déjà.';
         }
         
     }
