@@ -1,0 +1,39 @@
+* {
+    transition-duration: 0.6s;
+}
+#navbarNav a {
+    margin-right: 20px;
+    margin-left: 20px;
+    font-size: 17px;
+    color : #178ccb
+}
+button .navbar-toggler-icon {
+    color: #178ccb;
+}
+.banniere {
+    width: 100%;
+}
+.mask p {
+    font-size: 60px;
+    font-weight: bold;
+}
+.errorForm {
+    color: rgb(150, 28, 28);
+    font-size: 14px;
+    margin-left: 10px;
+}
+.formOk {
+    color: rgb(93, 187, 39);
+    font-size: 14px;
+    margin-left: 10px;
+}
+@media (max-width: 640px) {
+    .mask p {
+        font-size: 20px;
+    }
+}
+@media (min-width: 640px) and (max-width: 1024px) {
+    .mask p {
+        font-size: 30px;
+    }
+}
